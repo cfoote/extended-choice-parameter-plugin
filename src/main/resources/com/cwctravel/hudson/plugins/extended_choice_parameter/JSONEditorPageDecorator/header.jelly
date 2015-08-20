@@ -4,6 +4,7 @@
      jQuery.noConflict();
    </script>     
    <script type="text/javascript" src="${rootURL}/plugin/extended-choice-parameter/js/selectize.min.js"></script>
+   <script type="text/javascript" src="${rootURL}/plugin/extended-choice-parameter/js/swig.min.js"></script>
    <script type="text/javascript" src="${rootURL}/plugin/extended-choice-parameter/js/jsoneditor.min.js"></script>   
    <script type="text/javascript" src="${rootURL}/plugin/extended-choice-parameter/js/jquery.jsonview.min.js"></script>
   
