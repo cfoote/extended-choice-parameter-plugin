@@ -109,10 +109,29 @@ public class ExtendedChoiceParameterDefinition extends ParameterDefinition {
 
 	@Extension @Symbol({"extendedChoice"})
 	public static class DescriptorImpl extends ParameterDescriptor {
+
+	    /** @see {@link http://node-swig.github.io/swig-templates/} */
+        private boolean useSwigTemplateEngine = false;
+
+        public DescriptorImpl() {
+            load();
+        }
+
 		@Override
 		public String getDisplayName() {
 			return Messages.ExtendedChoiceParameterDefinition_DisplayName();
 		}
+
+        @Override
+        public boolean configure(StaplerRequest req, JSONObject json) throws FormException {
+            useSwigTemplateEngine = json.getBoolean("useSwigTemplateEngine");
+            save();
+            return super.configure(req, json);
+        }
+
+        public boolean getUseSwigTemplateEngine() {
+            return useSwigTemplateEngine;
+        }
 
 		public FormValidation doCheckPropertyFile(@QueryParameter final String propertyFile, @QueryParameter final String propertyKey,
 				@QueryParameter final String type) throws IOException, ServletException {

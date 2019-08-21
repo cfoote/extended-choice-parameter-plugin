@@ -11,9 +11,11 @@
             return r;
         };
      }  
-   </script>     
+   </script>
    <script type="text/javascript" src="${resURL}/plugin/extended-choice-parameter/js/selectize.min.js"></script>
-   <script type="text/javascript" src="${resURL}/plugin/extended-choice-parameter/js/swig.min.js"></script>
+   <j:if test="${instance.DescriptorImpl.getUseSwigTemplateEngine()}">
+     <script type="text/javascript" src="${resURL}/plugin/extended-choice-parameter/js/swig.min.js"></script>
+   </j:if>
    <script type="text/javascript" src="${resURL}/plugin/extended-choice-parameter/js/jsoneditor.min.js"></script>
    <script type="text/javascript" src="${resURL}/plugin/extended-choice-parameter/js/jquery.jsonview.min.js"></script>
   
